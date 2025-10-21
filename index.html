@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fejkad inloggning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+    <header>
+      <h1>Exempelsida: Fejkad inloggning</h1>
+      <p>Den här sidan visar en fejkad inloggningsruta som visas som modal och blockerar allt annat innehåll tills den accepteras.</p>
+    </header>
+
+    <main class="content">
+      <p>Bakgrundsinnehåll som inte går att interagera med medan modalen är öppen.</p>
+      <p class="note">Observera: formuläret är fejk och loggar inte in någon användare.</p>
+    </main>
+  </div>
+
+  <div id="loginOverlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="modal" id="loginModal">
+      <h2 id="loginTitle">Logga in</h2>
+      <p>Använd valfritt användarnamn och lösenord (fejk).</p>
+
+      <form action="#" method="post" onsubmit="return false;" aria-describedby="note">
+        <div class="form-row">
+          <label for="user">Användarnamn</label>
+          <input id="user" name="user" type="text" autocomplete="username">
+        </div>
+        <div class="form-row">
+          <label for="pass">Lösenord</label>
+          <input id="pass" name="pass" type="password" autocomplete="current-password">
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+          <button id="loginBtn" type="button">Logga in</button>
+          <button id="cancelBtn" type="button">Stäng</button>
+        </div>
+      </form>
+
+      <div id="note" class="note">Denna ruta är modal — du kan inte klicka dig förbi den.</div>
+    </div>
+  </div>
+
+  <script src="scrpit.js"></script>
+
+</body>
+</html>
